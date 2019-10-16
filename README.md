@@ -13,10 +13,12 @@ Author: Dolwin Fernandes
 <hr>
 
 <h2> Project overview</h2>
-Bamazon is an Amazon-like store front that utilizes Node.js and MySQL. The app takes in orders from customers and depletes stock from the store's inventory.
+Bamazon is an Amazon/E-commerce like app that's built using Node.js and MySQL. The app takes in orders from customers and updates the store's inventory accordingly.
 <hr>
 
 <h2> How it works </h2>
+
+- Make sure to import the database dmp file from the github repository into your local MySQL server through MySQL Workbench.
 
 - Type `node bamazonCustomer.js` into the command line to start the app.
 
