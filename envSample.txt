@@ -1,0 +1,3 @@
+BAMAZON_HOST="localhost"
+BAMAZON_USER="username"
+BAMAZON_PASS="yourPassword"
