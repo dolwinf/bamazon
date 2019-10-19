@@ -37,7 +37,7 @@ function showInventory() {
 	connection.query(queryStr, function(err, data) {
 		if (err) throw err;
 
-		console.log(" Existing Inventory:");
+		console.log(chalk.hex("#32a83a")(" Existing Inventory:"));
 		console.log(
 			chalk.hex("#33FFB8 ")(
 				"---------------------------------------------------------------------\n"
