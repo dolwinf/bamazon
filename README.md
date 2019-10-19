@@ -8,7 +8,7 @@ Author: Dolwin Fernandes
 
 <h3> App demo </h3>
 
-[Demo](https://github.com/dolwinf/bamazon/blob/master/Bamazon.gif)
+![Demo](https://github.com/dolwinf/bamazon/blob/master/Bamazon.gif)
 
 <hr>
 
