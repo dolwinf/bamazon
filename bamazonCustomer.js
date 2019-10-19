@@ -16,17 +16,20 @@ connection.connect(function(err) {
 	if (err) throw err;
 });
 
-var bamazon = "Bamazon";
-figlet(bamazon, function(err, data) {
-	if (err) {
-		console.log("Something went wrong...");
-		console.dir(err);
-		return;
-	}
-	console.log(chalk.hex("#116133")(data));
+function showBanner() {
+	var bamazon = "Bamazon";
+	figlet(bamazon, function(err, data) {
+		if (err) {
+			console.log("Something went wrong...");
+			console.dir(err);
+			return;
+		}
+		console.log(chalk.hex("#116133")(data));
 
-	console.log(chalk.hex("#116133")(" Welcome to Bamazon."));
-});
+		console.log(chalk.hex("#116133")(" Welcome to Bamazon."));
+		showInventory();
+	});
+}
 
 function showInventory() {
 	queryStr = "SELECT * FROM products";
@@ -42,15 +45,15 @@ function showInventory() {
 		);
 
 		data.forEach(function(item) {
-			var strOut = "";
-			strOut += chalk.hex("#ff9900")(" Product ID: " + item.item_id + " | ");
-			strOut += chalk.hex("#ff9900")(
+			var string = "";
+			string += chalk.hex("#ff9900")(" Product ID: " + item.item_id + " | ");
+			string += chalk.hex("#ff9900")(
 				" Product Name: " + item.product_name + " | "
 			);
-			strOut += chalk.hex("#ff9900")(" Department: " + item.department + " | ");
-			strOut += chalk.hex("#ff9900")(" Price: $" + item.price + "\n");
+			string += chalk.hex("#ff9900")(" Department: " + item.department + " | ");
+			string += chalk.hex("#ff9900")(" Price: $" + item.price + "\n");
 
-			console.log(strOut);
+			console.log(string);
 		});
 
 		console.log(
@@ -70,7 +73,6 @@ function promptPurchase() {
 				type: "input",
 				name: "item_id",
 				message: "Please enter the item ID you would like to purchase.",
-
 				filter: Number
 			},
 			{
@@ -99,6 +101,7 @@ function promptPurchase() {
 						console.log(
 							chalk.hex("#FF0000")("\n Error: Please select valid item ID\n")
 						);
+
 						showInventory();
 					} else {
 						var productData = data[0];
@@ -125,7 +128,7 @@ function promptPurchase() {
 									)
 								);
 								console.log(
-									chalk.hex("#116133")("\n Thanks for shopping at Bamazon.")
+									chalk.hex("#116133")("\n Thank you for shopping at Bamazon.")
 								);
 								console.log(
 									chalk.hex("#33FFB8 ")(
@@ -151,5 +154,4 @@ function promptPurchase() {
 			);
 		});
 }
-
-showInventory();
+showBanner();
