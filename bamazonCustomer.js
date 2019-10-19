@@ -36,7 +36,7 @@ function showInventory() {
 
 		console.log(" Existing Inventory:");
 		console.log(
-			chalk.hex("#760ce8")(
+			chalk.hex("#33FFB8 ")(
 				"---------------------------------------------------------------------\n"
 			)
 		);
@@ -54,7 +54,7 @@ function showInventory() {
 		});
 
 		console.log(
-			chalk.hex("#760ce8")(
+			chalk.hex("#33FFB8 ")(
 				"---------------------------------------------------------------------\n"
 			)
 		);
@@ -106,7 +106,7 @@ function promptPurchase() {
 						if (quantity <= productData.stock_quantity) {
 							console.log(
 								chalk.hex("#116133")(
-									"\n This item is in stock. Placing order now.\n"
+									"\n This item is in stock. Placing order.......\n"
 								)
 							);
 
@@ -128,7 +128,7 @@ function promptPurchase() {
 									chalk.hex("#116133")("\n Thanks for shopping at Bamazon.")
 								);
 								console.log(
-									chalk.hex("#760ce8")(
+									chalk.hex("#33FFB8 ")(
 										"\n---------------------------------------------------------------------\n"
 									)
 								);
@@ -136,10 +136,10 @@ function promptPurchase() {
 								connection.end();
 							});
 						} else {
-							console.log(chalk.hex("#FF0000")("\n Not enough stock.\n"));
-							console.log(chalk.hex("#FF0000")(" Please modify your order."));
+							console.log(chalk.hex("#FFC0CB")("\n Not enough stock.\n"));
+							console.log(chalk.hex("#FFC0CB")(" Please modify your order."));
 							console.log(
-								chalk.hex("#760ce8")(
+								chalk.hex("#33FFB8 ")(
 									"\n---------------------------------------------------------------------\n"
 								)
 							);
